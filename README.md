@@ -13,7 +13,7 @@ Docker Engine for Debian is compatible with x86_64 (or amd64), armhf, arm64, and
 
 ## To check the current release/version execute below command
 
-   $ cat /etc/*release*
+   $cat /etc/*release*
 
 ## Uninstall old versions 
 
@@ -46,11 +46,11 @@ Add the repository to Apt sources:
 
 ###  To install the latest version, run:
 
-   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   $sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 ### Verify that the installation is successful by running the hello-world image:
 
-   sudo docker run hello-world
+   $sudo docker run hello-world
 
 ## Install from a package 
 
@@ -60,5 +60,5 @@ Follow the documentation
 
 This is the easiest way to install docker engine on debian machine.
 
-  curl -fsSL https://test.docker.com -o test-docker.sh
-  sudo sh test-docker.sh
+  $curl -fsSL https://test.docker.com -o test-docker.sh
+  $sudo sh test-docker.sh
