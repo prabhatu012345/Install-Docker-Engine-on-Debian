@@ -13,7 +13,7 @@ Docker Engine for Debian is compatible with x86_64 (or amd64), armhf, arm64, and
 
 ## To check the current release/version execute below command
 
-cat /etc/*release*
+$ cat /etc/*release*
 
 ## Uninstall old versions 
 
@@ -21,39 +21,40 @@ Docker Engine depends on containerd and runc. Docker Engine bundles these depend
 
 $for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
 
-"Images, containers, volumes, and networks stored in /var/lib/docker/"
+Note : "Images, containers, volumes, and networks stored in /var/lib/docker/"
 
 # Installation methods 
 
 ## Install using the apt repository
    
-   ### Set up Docker's apt repository.
-    Add Docker's official GPG key:
+### Set up Docker's apt repository.
+Add Docker's official GPG key:
 
-     sudo apt-get update
-     sudo apt-get install ca-certificates curl gnupg
-     sudo install -m 0755 -d /etc/apt/keyrings
-     curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-     sudo chmod a+r /etc/apt/keyrings/docker.gpg
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
-    Add the repository to Apt sources:
-    echo \
+Add the repository to Apt sources:
+
+echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt-get update
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
 
-   ###  To install the latest version, run:
+###  To install the latest version, run:
 
-      sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-   ### Verify that the installation is successful by running the hello-world image:
+### Verify that the installation is successful by running the hello-world image:
 
-      sudo docker run hello-world
+sudo docker run hello-world
 
 ## Install from a package 
 
-   Follow the documentation
+Follow the documentation
 
 ## Install using the convenience script
 
