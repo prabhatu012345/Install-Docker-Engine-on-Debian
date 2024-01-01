@@ -13,7 +13,7 @@ Docker Engine for Debian is compatible with x86_64 (or amd64), armhf, arm64, and
 
 ## To check the current release/version execute below command
 
-   $cat /etc/*release*
+   "$cat /etc/*release*"
 
 ## Uninstall old versions 
 
@@ -59,6 +59,11 @@ Follow the documentation
 ## Install using the convenience script
 
 This is the easiest way to install docker engine on debian machine.
+ 
+Run below command to download installation script
 
   $curl -fsSL https://test.docker.com -o test-docker.sh
+
+To execute this script run below command
+
   $sudo sh test-docker.sh
