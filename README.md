@@ -13,13 +13,13 @@ Docker Engine for Debian is compatible with x86_64 (or amd64), armhf, arm64, and
 
 ## To check the current release/version execute below command
 
-$ cat /etc/*release*
+   $ cat /etc/*release*
 
 ## Uninstall old versions 
 
 Docker Engine depends on containerd and runc. Docker Engine bundles these dependencies as one bundle: containerd.io. If you have installed the containerd or runc previously, uninstall them to avoid conflicts with the versions bundled with Docker Engine.
 
-$for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+   $for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
 
 Note : "Images, containers, volumes, and networks stored in /var/lib/docker/"
 
@@ -30,27 +30,27 @@ Note : "Images, containers, volumes, and networks stored in /var/lib/docker/"
 ### Set up Docker's apt repository.
 Add Docker's official GPG key:
 
-sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
+  sudo apt-get update
+  sudo apt-get install ca-certificates curl gnupg
+  sudo install -m 0755 -d /etc/apt/keyrings
+  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
 Add the repository to Apt sources:
 
-echo \
+   echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
+  sudo apt-get update
 
 ###  To install the latest version, run:
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 ### Verify that the installation is successful by running the hello-world image:
 
-sudo docker run hello-world
+   sudo docker run hello-world
 
 ## Install from a package 
 
@@ -60,5 +60,5 @@ Follow the documentation
 
 This is the easiest way to install docker engine on debian machine.
 
-curl -fsSL https://test.docker.com -o test-docker.sh
-sudo sh test-docker.sh
+  curl -fsSL https://test.docker.com -o test-docker.sh
+  sudo sh test-docker.sh
